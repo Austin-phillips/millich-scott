@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar>
         <Flash />
         <FetchUser>
           <Switch>
@@ -24,6 +24,7 @@ class App extends Component {
             <Route component={NoMatch} />
           </Switch>
         </FetchUser>
+        </NavBar>
       </div>
     );
   }

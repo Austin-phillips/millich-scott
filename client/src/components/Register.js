@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Header, Form, Button, Segment } from 'semantic-ui-react';
+import { Header, Form, Button, Segment, Divider } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { registerUser } from '../actions/auth';
 import { setFlash } from '../actions/flash';
+import { Link, withRouter } from 'react-router-dom';
 
 class Register extends Component {
   state = { email: '', password: '', passwordConfirmation: '' };
@@ -67,9 +68,13 @@ class Register extends Component {
             <Button type='submit'>Submit</Button>
           </Segment>
         </Form>
+        <Divider />
+        <Link to='/login'>
+          <Header as='h4' textAlign='center' color='blue'>Already have an account?</Header>
+        </Link>
       </Segment>
     );
   }
 }
 
-export default connect()(Register);
+export default withRouter(connect()(Register));

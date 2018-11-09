@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Header, Segment, Form, Button } from 'semantic-ui-react';
+import { Header, Segment, Form, Button, Divider } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { handleLogin } from '../actions/auth';
+import { Link, withRouter } from 'react-router-dom';
 
 class Login extends Component {
   state = { email: '', password: '' };
@@ -49,9 +50,13 @@ class Login extends Component {
             <Button primary type='submit'>Submit</Button>
           </Segment>
         </Form>
+        <Divider />
+        <Link to='/register'>
+          <Header as='h4' textAlign='center' color='blue'>Don't have an account?</Header>
+        </Link>
       </Segment>
     );
   }
 }
 
-export default connect()(Login);
+export default withRouter(connect()(Login));
