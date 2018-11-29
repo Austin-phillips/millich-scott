@@ -34,7 +34,12 @@ class BrowserNav extends Component {
           <Link to='/'>
             <Menu.Item name='home' />
           </Link>
-          {this.rightNavs()}
+          <Link to='/'>
+            <Menu.Item name='Application' />
+          </Link>
+          <Link to='/'>
+            <Menu.Item name='About' />
+          </Link>
         </Menu>
         {this.props.children}
       </div>

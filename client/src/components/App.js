@@ -9,12 +9,14 @@ import ProtectedRoute from './ProtectedRoute';
 import AuthRoute from './AuthRoute';
 import FetchUser from './FetchUser';
 import { Switch, Route } from 'react-router-dom';
+import Footer from './Footer';
+import '../assets/main.css'
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <NavBar>
+      <div className='Home'>
+        <NavBar className='menu'>
         <Flash />
         <FetchUser>
           <Switch>
@@ -24,6 +26,7 @@ class App extends Component {
             <Route component={NoMatch} />
           </Switch>
         </FetchUser>
+        <Footer />
         </NavBar>
       </div>
     );

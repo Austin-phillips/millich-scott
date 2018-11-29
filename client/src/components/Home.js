@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Header, Segment, Divider, Grid } from 'semantic-ui-react';
+import { Header, Segment, Divider, Grid, Image, Button, Card } from 'semantic-ui-react';
 import '../assets/main.css'
+import DiversifiedLogo from '../images/DiversifiedLogo.png'
+import Millich from '../images/Millich.jpg'
 
 class Home extends Component {
 
@@ -8,18 +10,21 @@ class Home extends Component {
     return (
       <div>
         <div className='mainHeader'>
-          <div className='headerlayer'>
-            <Header as='h1' textAlign='center'>Financial Services</Header>
-          </div>
+          <Image src={DiversifiedLogo} fluid />
         </div>
-        <Divider />
-        <Grid columns={2} divided>
-          <Grid.Row stretched>
-            <Grid.Column>
-              <Segment>1</Segment>
+        <Segment basic textAlign='center'>
+          <Button color='green' size='large'>Get Started</Button>
+        </Segment>
+        <Grid celled='internally'>
+          <Grid.Row>
+            <Grid.Column width={3}>
+              <Image src={Millich} />
             </Grid.Column>
-            <Grid.Column>
-              <Segment>1</Segment>
+            <Grid.Column width={10}>
+              <Segment basic textAlign='center'>About Scott millich</Segment>
+            </Grid.Column>
+            <Grid.Column width={3}>
+              <Image src='/images/wireframe/image.png' />
             </Grid.Column>
           </Grid.Row>
         </Grid>

@@ -5,6 +5,7 @@ import { Button, Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleLogout } from '../actions/auth';
+import '../assets/main.css'
 
 
 class NavBar extends Component {
@@ -37,11 +38,9 @@ class NavBar extends Component {
     if(isMobile){
       return (
         <div>
-          <Button.Group>
-            <Button onClick={this.handleMenu}>
-              Menu
+          <Button onClick={this.handleMenu}>
+            <Icon name='bars'/> Menu
           </Button>
-          </Button.Group>
 
           <Sidebar.Pushable as={Segment}>
             <Sidebar
@@ -54,9 +53,14 @@ class NavBar extends Component {
               visible={visible}
               width='thin'
             >
-              {this.rightNavs()}
               <Link to='/'>
                 <Menu.Item name='home' />
+              </Link>
+              <Link to='/'>
+                <Menu.Item name='Get Started' />
+              </Link>
+              <Link to='/'>
+                <Menu.Item name='About' />
               </Link>
             </Sidebar>
 
